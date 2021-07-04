@@ -1,0 +1,224 @@
+
+* {
+  -webkit-appearance: none;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+html,
+body {
+  background: black;
+  color: white;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: table;
+}
+
+h1 {
+  font-size: 1.6em;
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  height: 3em;
+}
+
+input {
+  font-size: 1em;
+  border-radius: 0.6em;
+  border-width: 0;
+}
+
+button {
+  font-size: 1em;
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+  padding: 0.6em;
+  border-radius: 0.6em;
+}
+
+main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  font-size: 12pt;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 auto;
+  max-width: 48em;
+  overflow: hidden;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+li {
+  margin: 0 auto;
+  list-style-type: none;
+}
+
+button span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: inline-block;
+  height: 7vh;
+  margin: 0 auto;
+}
+
+.chat {
+  height: 18vh;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  z-index: 400;
+  background-color: black;
+}
+
+.chat-history {
+  text-align: left;
+  color: black;
+  border-radius: 0.5em;
+  background-color: darkgray;
+  height: 10vh;
+  width: 100%;
+  line-height: 1em;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.chat-form {
+  overflow: hidden;
+}
+
+.chat-form input {
+  width: 85%;
+  height: 7vh;
+  border-radius: 0.5em;
+}
+
+.chat-form span {
+  display: block;
+  overflow: hidden;
+}
+
+.chat-form button {
+  height: 7vh;
+  width: 15%;
+  float: right;
+}
+
+.chat-form input,
+.chat-form button {
+  box-sizing: border-box;
+}
+
+.username-input input {
+  height: 7vh;
+  width: 50vw;
+}
+
+.connections {
+  position: absolute;
+  right: 1vw;
+  bottom: 10vh;
+  line-height: 7vh;
+  height: 7vh;
+  width: 7vh;
+  border-radius: 4vh;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: center;
+  font-size: 1.25em;
+  color: white;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.settings-button {
+  background-color: black;
+  float: right;
+  width: 3em;
+  border-radius: 3em;
+  height: 7vh;
+  padding: 0;
+}
+
+.settings-menu {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 500;
+  background-color: black;
+  transition: max-height 0.5s ease;
+  overflow: hidden;
+}
+
+.settings-menu.showing {
+  max-height: 100vh;
+}
+
+.settings-menu.collapsed {
+  max-height: 0;
+}
+
+.settings-menu .back-button-container {
+  display: flex;
+}
+
+.table {
+  width: 100%;
+  height: 20vh;
+}
+
+@keyframes color_change {
+  from { opacity: 1; }
+  to { opacity: 0.5; }
+}
+
+.icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 0.2em;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.chat-history .icon {
+  width: 0.85em;
+  height: 0.85em;
+}
+
+.icon.settings {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="16" cy="16" r="4" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/><path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="M27.758 10.366l-1-1.732a2 2 0 00-2.732-.732l-.526.304c-2 1.154-4.5-.289-4.5-2.598V5a2 2 0 00-2-2h-2a2 2 0 00-2 2v.608c0 2.309-2.5 3.753-4.5 2.598l-.526-.304a2 2 0 00-2.732.732l-1 1.732a2 2 0 00.732 2.732l.526.304c2 1.155 2 4.041 0 5.196l-.526.304a2 2 0 00-.732 2.732l1 1.732a2 2 0 002.732.732l.526-.304c2-1.155 4.5.289 4.5 2.598V27a2 2 0 002 2h2a2 2 0 002-2v-.608c0-2.309 2.5-3.753 4.5-2.598l.526.304a2 2 0 002.732-.732l1-1.732a2 2 0 00-.732-2.732l-.526-.304c-2-1.155-2-4.041 0-5.196l.526-.304a1.999 1.999 0 00.732-2.732z"/></svg>');
+}
